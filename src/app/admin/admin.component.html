@@ -7,7 +7,7 @@
                     <label>Select Table to perform this operation on: </label>
                 </div>
                 <div class="col-5">
-                    <select class="form-control" (change)="onTableChange($event)">
+                    <select class="form-control" (change)="onTableChange($event)" name="dropdown">
                         <option value="" selected>Select Option</option>
                         <option value="ROLE">Roles</option>
                         <option value="LEVEL">Levels</option>
@@ -142,7 +142,7 @@
                     </mat-form-field>
                 </div>
                 <div class="col-1" style="padding: 15px;">
-                    <button mat-mini-fab color="blue" aria-label="Add Doctor" (click)="openAddDialog(tableName)">
+                    <button mat-mini-fab color="blue" aria-label="Add Doctor" (click)="openAddDialog(tableName)" name="add">
                         <mat-icon>note_add</mat-icon>
                     </button>
                 </div>

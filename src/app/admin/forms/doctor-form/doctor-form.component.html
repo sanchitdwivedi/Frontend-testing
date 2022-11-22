@@ -1,10 +1,10 @@
 <button class="close" mat-button mat-dialog-close>X</button>
 <h1 mat-dialog-title>Doctor</h1>
-<form #doctorForm="ngForm" *ngIf="add">
+<form #doctorForm="ngForm" *ngIf="add" (ngSubmit)="addDoctor(doctorForm)" ngNativeValidate>
     <div class="form-group row">
         <div class="col-sm-4">
             <label for="userId" class="col-form-label">User Id</label>
-            <input type="text" class="form-control" id="userId" ngModel name="userId" placeholder="User Id">
+            <input type="text" class="form-control" id="userId" ngModel name="userId" pattern="^[0-9]*$" maxlength="12" placeholder="User Id">
         </div>
         <div class="col-sm-4" >
             <label for="password" class="col-form-label">Password</label>
@@ -50,11 +50,11 @@
         </div>
         <div class="col-sm-3">
             <label for="mobileNo" class="col-form-label">Mobile Number</label>
-            <input type="tel" class="form-control" id="mobileNo" ngModel name="mobileNo" placeholder="Mobile Number">
+            <input type="tel" class="form-control" id="mobileNo" ngModel name="mobileNo" pattern="^(\+\d{1,3}[- ]?)?\d{10}$" placeholder="Mobile Number">
         </div>
         <div class="col-sm-3">
             <label for="email" class="col-form-label">Email</label>
-            <input type="email" class="form-control" id="email" ngModel name="email" placeholder="Email">
+            <input type="email" class="form-control" id="email" ngModel name="email" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" placeholder="Email">
         </div>
         <div class="col-sm-3">
             <label for="hospital" class="col-form-label">Hospital</label>
@@ -79,11 +79,11 @@
         </div>
         <div class="form-group col-sm-3">
             <label for="pincode">Pincode</label>
-            <input type="text" class="form-control" id="pincode" ngModel name="pincode" placeholder="Pincode">
+            <input type="text" class="form-control" id="pincode" ngModel name="pincode" pattern="^[1-9][0-9]{5}$" placeholder="Pincode">
         </div>
     </div>
     <div *ngIf="add">
-        <button mat-raised-button (click)="addDoctor(doctorForm)" mat-dialog-close>Add Doctor</button>
+        <input type="submit" value="Add Doctor" id="addDoctor">
     </div>
 </form>
 
