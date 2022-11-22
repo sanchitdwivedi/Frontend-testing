@@ -72,7 +72,7 @@
     </div>
     <div class="container" style="padding: 10px">
       <div class="g-3 d-flex justify-content-around">
-        <button type="submit" class="btn btn-primary p-2" style="width:200px" (click)="search()"
+        <button type="submit" class="btn btn-primary p-2" style="width:200px" (click)="search()" name="search"
           [disabled]="(optionValue==='abha' && (!hasConsent || abhaId.length!==12)) || (optionValue==='name' && (!hasConsent || name.length===0))">Search</button>
         <button type="button" class="btn btn-primary p-2" style="width:200px" [disabled]="registerDisabled && (abhaId.length!==12 || (name.length===0))"
           [routerLink]="[routePath]">{{buttonText}}</button>
