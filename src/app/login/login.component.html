@@ -10,14 +10,15 @@
         <form #loginForm="ngForm" (ngSubmit)="login(loginForm)" ngNativeValidate>
           <div class="inputBx">
             <span>User ID</span>
-            <input type="number" ngModel id="userId" name="userId" required/>
+            <input type="text" ngModel id="userId" name="userId" pattern="^[0-9]*$" maxlength="12" required/>
           </div>
           <div class="inputBx">
             <span>Password</span>
-            <input type="password" class="form-control" ngModel name="userPassword" id="userPassword" required/>
+            <input type="password" class="form-control" ngModel name="userPassword" id="userPassword" pattern="^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$" minlength="8" required/>
+            <!-- pattern="^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$" -->
           </div>
           <div class="inputBx">
-            <input type="submit" value="Log in">
+            <input type="submit" value="Log in" id="login">
           </div>
       </form>
     </div>
