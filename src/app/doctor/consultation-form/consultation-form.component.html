@@ -105,7 +105,7 @@
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="diagnosisType">Diagnosis Type:</label>
-                    <select class="form-control" id="diagnosisType" formControlName="diagnosisType" required>
+                    <select class="form-control" name="diagnosisType" id="diagnosisType" formControlName="diagnosisType" required>
                         <option value="DIFFERENTIAL" selected>Differential</option>
                         <option value="PROVISIONAL">Provisional</option>
                         <option value="TENTATIVE">Tentative</option>
@@ -126,7 +126,7 @@
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="icd10Code">ICD 10 Code: </label>
-                    <select class="form-control" id="icd10Code" formControlName="icd10Code" required>
+                    <select class="form-control" id="icd10Code" name="icd10Code" formControlName="icd10Code" required>
                         <option selected>G40</option>
                         <option>I63</option>
                         <option>R51</option>
@@ -147,7 +147,7 @@
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="improvementType">Improvement Type: </label>
-                    <select class="form-control" id="improvementType" formControlName="improvementType" required>
+                    <select class="form-control" name="improvementType" id="improvementType" formControlName="improvementType" required>
                         <option value="CONDITION_IMPROVED" selected>Condition Improved</option>
                         <option value="CONDITION_WORSENED">Condition Worsened</option>
                         <option value="CONDITION_UNCHANGED">Condition Unchanged</option>
@@ -208,7 +208,7 @@
             <div class="form-row">
                 <div class="form-group col-md-3">
                     <label for="furtherInstructions">Further Instructions:</label>
-                    <select class="form-control" formControlName="furtherInstructions" id="furtherInstructions"
+                    <select class="form-control" formControlName="furtherInstructions" id="furtherInstructions" name="furtherInstructions"
                         (change)="onChange($event)">
                         <option>Follow-up</option>
                         <option>Refer</option>
@@ -243,7 +243,7 @@
                 </div>
             </div>
             <button type="submit" class="btn btn-primary" routerLink="/doctor/search-patient">Back</button>
-            <button type="submit" class="btn btn-primary float-right" (click)="create()">Submit</button>
+            <button type="submit" class="btn btn-primary float-right" (click)="create()" id="submitB">Submit</button>
         </form>
     </div>
 </div>

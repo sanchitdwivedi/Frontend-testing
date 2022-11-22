@@ -130,4 +130,8 @@ export class SearchComponent implements OnInit {
   onChange(event: any){
     this.optionValue = event.target.value;
   }
+
+  // test(){
+  //   alert("clicked");
+  // }
 }
